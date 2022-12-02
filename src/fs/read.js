@@ -2,8 +2,9 @@ import * as fs from 'fs';
 
 const read = async () => {
   try {
-    const filesContent = fs.readFile('src/fs/files/fileToRead.txt');
-    console.log(filesContent);
+    fs.readFile('src/fs/files/fileToRead.txt', 'utf8', (err, data) => {
+      console.log(data);
+    });
   } catch (error) {
     console.error('FS operation failed');
   }
